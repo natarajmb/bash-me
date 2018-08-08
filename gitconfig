@@ -1,0 +1,15 @@
+[User]
+	name = Nataraj Basappa
+	email = n5j.b5a@gmail.com
+
+[alias]
+    ci = commit -a
+    co = checkout
+    st = status
+    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+
+[core]
+	autocrlf = input
+
+[credential]
+	helper = osxkeychain

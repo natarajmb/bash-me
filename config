@@ -1,0 +1,18 @@
+host github.com
+     user git
+     hostname github.com
+     identityfile ~/.ssh/github_rsa
+
+host bhima
+	user natarajmb
+	hostname bhima
+	port 1508
+	identityfile ~/.ssh/id_rsa
+
+host arkavathi
+	user natarajmb
+	hostname arkavathi
+	identityfile ~/.ssh/id_rsa
+	ForwardAgent yes
+    ForwardX11 yes
+	ForwardX11Trusted yes
