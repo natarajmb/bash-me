@@ -14,5 +14,5 @@ host arkavathi
 	hostname arkavathi
 	identityfile ~/.ssh/id_rsa
 	ForwardAgent yes
-    ForwardX11 yes
+	ForwardX11 yes
 	ForwardX11Trusted yes

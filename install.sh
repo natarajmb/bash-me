@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#--------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 #
 # This is a install file to setup bash settings on new machine.
 # Checkout into the home folder and call ./install.sh to setup.
@@ -7,6 +7,7 @@
 # Changes this script does
 # - Installs homebrew
 # - Installs oh-my-bash
+# - Upgrade bash to v4
 # - Moves following files in $OSH/CUSTOM folder
 #   - bash_exports
 #   - bash_localised
@@ -24,11 +25,14 @@
 # Created : 26th November 2016
 # Last modified: 8th August 2018
 #
-#--------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 
 # Install homebrew, if its OSX
 if [[ $OPERATING_SYSTEM == 'OSX' ]] ; then
+  # homebrew
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # upgrade bash on mac
+  brew update && brew install bash
 fi
 
 # Install oh-my-bash
