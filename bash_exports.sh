@@ -11,37 +11,22 @@
 #
 # Author : Nataraj Basappa <n5j.b5a@gmail.com>
 # Created : 15th October 2010
-# Last modified: 8th August 2018
+# Last modified: 9th August 2018
 #
 #------------------------------------------------------------------------------
 
 # Development home, everything to do with programming
 export DEV_HOME=~/Code
 
-# Refers to development tools
-export TOOLS=$DEV_HOME/tools
-
-# Java Home and workspace
-if [[ $OPERATING_SYSTEM == 'Linux' ]] ; then
-    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-elif [[ $OPERATING_SYSTEM == 'OSX' ]] ; then
+# Java Home
+if [[ $OSTYPE == "linux-gnu"  ]] ; then
+    export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+elif [[ $OSTYPE == "darwin"* ]] ; then
 	export JAVA_HOME=$(/usr/libexec/java_home)
 fi
-
-# Ant home
-export ANT_HOME=$TOOLS/ant
-
-# Maven Home
-export M2_HOME=$TOOLS/maven
 
 # Speeds up maven compile
 export MAVEN_OPTS=-Xmx512m
 
 # Adding maven debug options
 export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=181016,server=y,suspend=n"
-
-# Gradle Home
-export GRADLE_HOME=$TOOLS/gradle
-
-# Update paths
-export PATH=$PATH:$ANT_HOME/bin:$M2_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:

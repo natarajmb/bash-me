@@ -11,11 +11,11 @@
 #
 # Author : Nataraj Basappa <n5j.b5a@gmail.com>
 # Created date: 7th December 2015
-# Last modified: 8th August 2018
+# Last modified: 9th August 2018
 #
 #------------------------------------------------------------------------------
 
 # Homebrew path update required only for Mac
-if [[ $OPERATING_SYSTEM == 'OSX' ]] ; then
+if [[ $OSTYPE == "darwin"* ]] ; then
    export PATH=$PATH:/opt/local/bin:/opt/local/sbin:
 fi
