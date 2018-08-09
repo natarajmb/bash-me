@@ -39,15 +39,21 @@ if [[ $OSTYPE == "darwin"* ]]; then
   fi
   
   # upgrade bash on mac
-  bash_major_version = $(echo $BASH_VERSION | cut -d '.' -f 1)
-  if [ "${bash_major_version}" -lt "4" ]; then
+  bash_major_version=$(echo $BASH_VERSION | cut -d '.' -f 1)
+  if [ ${bash_major_version} -lt 4 ]; then
     brew install bash
+    
+    # Add the new shell to the list of allowed shells
+    sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+    
+    # Change to the new shell
+    chsh -s /usr/local/bin/bash 
   fi
   unset bash_major_version
 fi
 
 # Install oh-my-bash
-if [ ! -n $OSH ]; then
+if [ -z $OSH ]; then
   sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 fi
 

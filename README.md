@@ -1,6 +1,6 @@
 bash-me
 =======
- Custom bash scirpts to bootstarp a new machine or update if changes custom aliases & exports 
+ Custom bash scripts to bootstarp a new machine or update if changes custom aliases & exports 
 
  How to run
  ----------
